@@ -11,7 +11,7 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-exams/releases/download/v1.0.1/com_devartexams_v1.0.1.zip</downloadurl>
         </downloads>
-        <sha256>b3a20057f49837caf34568112dac8c46884b1fdbdb029ab47e69bc30546cd456</sha256>
+        <sha256>ae1b18a98abaa1aa7234344c9cc093aa5a7d5d2b792e5c9633f5a97a1f52422e</sha256>
         <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-exams/main/changelog.xml</changelogurl>
         <targetplatform name="joomla" version="6.*" />
         <php_minimum>8.2</php_minimum>
