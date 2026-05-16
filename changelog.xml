@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelogs>
+    <changelog>
+        <element>com_devartexams</element>
+        <type>component</type>
+        <version>1.0.0</version>
+
+        <addition>
+            <item>Added full Joomla 6 native DevArt Exams component with modern MVC architecture</item>
+            <item>Added packages, levels, sections, questions and embedded answers management</item>
+            <item>Added real exam mode with official result storage</item>
+            <item>Added learning and practice mode with instant feedback</item>
+            <item>Added menu item integration for fixed package, fixed level and frontend mode behavior</item>
+            <item>Added learning question set options for random exam-sized practice or all available level questions</item>
+            <item>Added configurable pass percentage, question limits, timer, attempts and guest policy</item>
+            <item>Added random or fixed question order support</item>
+            <item>Added random or fixed answer order support</item>
+            <item>Added one-question-per-page and all-questions-on-one-page frontend modes</item>
+            <item>Added compact frontend question navigator, progress display and flagged questions for review</item>
+            <item>Added image support for questions and answers</item>
+            <item>Added explanations for learning and review workflows</item>
+            <item>Added detailed results history for real exams</item>
+            <item>Added answer review with correct and wrong answer display</item>
+            <item>Added section statistics and weak area analysis</item>
+            <item>Added CSV question bank import with preview and validation</item>
+            <item>Added CSV import support for Greek UTF-8 content</item>
+            <item>Added duplicate detection during CSV import</item>
+            <item>Added CSV export support</item>
+            <item>Added JSON backup export support</item>
+            <item>Added administrator results screen</item>
+            <item>Added administrator data tools and diagnostics</item>
+            <item>Added orphan data checks and cleanup tools</item>
+            <item>Added bulk question tools for large datasets</item>
+            <item>Added Joomla ACL support</item>
+            <item>Added component options including guest result storage policy</item>
+            <item>Added GitHub-based Joomla update server support</item>
+        </addition>
+
+        <change>
+            <item>Component architecture designed specifically for Joomla 6 and PHP 8.2+</item>
+            <item>Modern Joomla service provider and MVCComponent architecture used throughout</item>
+            <item>Frontend exam flow optimized for Cloudflare and cache-safe deployments</item>
+            <item>Exam runtime pages use no-store cache headers to protect session-based attempts</item>
+            <item>Question and answer loading optimized to avoid N+1 query patterns</item>
+            <item>Results and review workflows optimized for large question banks</item>
+            <item>Administrator interface simplified with operational dashboard cards</item>
+            <item>Answers are managed inside the Question form as the single source of truth</item>
+            <item>Sections are optional and can be used for organization, filtering and statistics</item>
+            <item>Language strings prepared for Greek and English usage</item>
+            <item>Installer prepared for clean production installation without demo data</item>
+        </change>
+
+        <security>
+            <item>Added SQL injection protection using Joomla database APIs and safe query construction</item>
+            <item>Added XSS protection through output escaping and input filtering</item>
+            <item>Added CSRF protection for administrator and frontend actions</item>
+            <item>Added ACL enforcement for administrator operations and component configuration</item>
+            <item>Added attempt token validation to reduce duplicate or stale exam submissions</item>
+            <item>Added submit rate guard for high-traffic environments</item>
+            <item>Added guest result storage control through component options</item>
+            <item>Added safer uninstall behavior with Keep Data support</item>
+        </security>
+
+        <fix>
+            <item>Fixed frontend mode persistence between learning and real exam workflows</item>
+            <item>Fixed all-questions-on-one-page frontend behavior</item>
+            <item>Fixed compact navigator behavior for large exams</item>
+            <item>Fixed display count for learning mode when all level questions are used</item>
+            <item>Fixed duplicate official result prevention on repeated submissions</item>
+            <item>Fixed installer upgrade safety for repeated schema updates</item>
+            <item>Fixed uninstall cleanup so clean installs do not include unwanted demo data</item>
+        </fix>
+
+        <note>
+            <item>Initial stable public release of DevArt Exams for Joomla 6</item>
+            <item>Designed for exam systems, certification practice, learning portals and large question banks</item>
+            <item>Tested with imports of more than 1000 questions and 4000 answers</item>
+            <item>Always test on a staging environment before production deployment</item>
+        </note>
+    </changelog>
+</changelogs>
