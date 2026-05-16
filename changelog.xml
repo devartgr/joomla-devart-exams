@@ -3,6 +3,49 @@
     <changelog>
         <element>com_devartexams</element>
         <type>component</type>
+        <version>1.0.1</version>
+
+        <addition>
+            <item>Added Joomla ACL permissions integration including administrator configuration permissions</item>
+            <item>Added Facebook and X social sharing Open Graph metadata support</item>
+            <item>Added menu item social metadata support</item>
+            <item>Added package-level social metadata support</item>
+            <item>Added global fallback social metadata support</item>
+            <item>Added social metadata priority resolution: Menu Item → Package → Global → Site fallback</item>
+            <item>Added cleaner production release hardening for public deployment</item>
+        </addition>
+
+        <change>
+            <item>Improved production stability for first public release deployments</item>
+            <item>Improved Joomla administrator permissions integration</item>
+            <item>Improved frontend social sharing compatibility for public exam pages</item>
+            <item>Improved metadata handling for Facebook crawler and X sharing previews</item>
+            <item>Improved release packaging consistency for GitHub production deployment</item>
+        </change>
+
+        <security>
+            <item>Added proper ACL enforcement for component options and administrator permissions</item>
+            <item>Improved production safety for administrator configuration access</item>
+        </security>
+
+        <fix>
+            <item>Fixed missing Joomla Permissions tab in component configuration</item>
+            <item>Fixed frontend social metadata fallback handling</item>
+            <item>Fixed public exam page Open Graph compatibility</item>
+            <item>Fixed metadata handling when multiple exam packages are used</item>
+            <item>Fixed production release packaging inconsistencies</item>
+        </fix>
+
+        <note>
+            <item>Production stability release for DevArt Exams</item>
+            <item>Recommended update for all initial 1.0.0 installations</item>
+            <item>Designed for Joomla 6 production exam and learning deployments</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>com_devartexams</element>
+        <type>component</type>
         <version>1.0.0</version>
 
         <addition>
@@ -31,7 +74,7 @@
             <item>Added administrator data tools and diagnostics</item>
             <item>Added orphan data checks and cleanup tools</item>
             <item>Added bulk question tools for large datasets</item>
-            <item>Added Joomla ACL support</item>
+            <item>Added Joomla ACL support foundation</item>
             <item>Added component options including guest result storage policy</item>
             <item>Added GitHub-based Joomla update server support</item>
         </addition>
@@ -54,7 +97,6 @@
             <item>Added SQL injection protection using Joomla database APIs and safe query construction</item>
             <item>Added XSS protection through output escaping and input filtering</item>
             <item>Added CSRF protection for administrator and frontend actions</item>
-            <item>Added ACL enforcement for administrator operations and component configuration</item>
             <item>Added attempt token validation to reduce duplicate or stale exam submissions</item>
             <item>Added submit rate guard for high-traffic environments</item>
             <item>Added guest result storage control through component options</item>
