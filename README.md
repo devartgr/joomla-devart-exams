@@ -4,7 +4,7 @@ Modern examination and quiz component for Joomla 6, designed for certification s
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.0-orange)
+![Release](https://img.shields.io/badge/Version-1.0.1-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,13 +15,13 @@ DevArt Exams is a modern Joomla 6 examination and quiz component built for stabl
 
 It is designed for certification exams, educational platforms, radio amateur preparation systems, employee training, online testing environments, and large-scale question banks.
 
-The component focuses on clean Joomla 6 architecture, production reliability, frontend usability, and performance under real-world workloads.
+The component focuses on clean Joomla 6 architecture, production reliability, frontend usability, security, social sharing compatibility, and performance under real-world workloads.
 
 ---
 
 ## Features
 
-### Exam Engine
+## Exam Engine
 
 - Real exam mode
 - Learning / practice mode
@@ -38,10 +38,13 @@ The component focuses on clean Joomla 6 architecture, production reliability, fr
 - compact frontend navigation
 - progress tracking
 - section-based performance analytics
+- weak area analysis
+- duplicate submission protection
+- cache-safe exam session handling
 
 ---
 
-### Learning Mode
+## Learning Mode
 
 Learning mode supports multiple workflows:
 
@@ -50,13 +53,18 @@ Learning mode supports multiple workflows:
 - menu-controlled learning behavior
 - optional frontend user mode selection
 
-Ideal for study and certification preparation.
+Ideal for:
+
+- certification preparation
+- study systems
+- educational portals
+- exam rehearsal workflows
 
 ---
 
-### Question Bank Management
+## Question Bank Management
 
-Structured question hierarchy:
+Structured hierarchy:
 
 - Packages
 - Levels
@@ -66,9 +74,10 @@ Structured question hierarchy:
 
 Features:
 
-- multiple choice questions
-- 4-answer workflows
-- image support
+- multiple choice question workflows
+- 4-answer support
+- image support for questions
+- image support for answers
 - explanations
 - optional difficulty field
 - publishing controls
@@ -78,20 +87,20 @@ Features:
 
 ---
 
-### Bulk Tools
+## Bulk Tools
 
 Administrator bulk tools include:
 
 - bulk section reassignment
 - bulk difficulty updates
 - bulk publish / unpublish
-- bulk deletion workflows
+- bulk delete workflows
 
 Designed for large question banks.
 
 ---
 
-### Import / Export
+## Import / Export
 
 ### CSV Import
 
@@ -103,9 +112,10 @@ Production-ready question bank import:
 - duplicate detection
 - per-row validation
 - UTF-8 safe Greek support
-- section auto creation
-- level auto creation
 - package auto creation
+- level auto creation
+- section auto creation
+- answer import validation
 - duplicate handling policies
 
 ---
@@ -124,11 +134,11 @@ Production-ready question bank import:
 
 - official exam result storage
 - user exam history
-- guest support (optional)
+- optional guest result storage
 - pass / fail badges
 - score tracking
-- date tracking
 - package / level tracking
+- timestamp tracking
 
 ---
 
@@ -154,9 +164,29 @@ Production-ready question bank import:
 - compact question navigator
 - progress display
 - jump to question
-- review flagged questions
+- flagged review workflow
 - mobile-friendly frontend
-- cache-safe exam runtime behavior
+- cache-safe runtime behavior
+
+---
+
+## Social Sharing Metadata
+
+DevArt Exams includes social sharing support for public exam pages.
+
+Supported:
+
+- Facebook Open Graph
+- X / Twitter cards
+
+Metadata priority:
+
+1. Joomla Menu Item social metadata
+2. Package social metadata
+3. Global component social metadata
+4. Site fallback metadata
+
+Designed to avoid conflicts with existing SEO extensions while preserving social sharing compatibility.
 
 ---
 
@@ -170,8 +200,8 @@ Production-ready question bank import:
 - question management
 - results management
 - options panel
-- data tools
 - diagnostics
+- data tools
 
 ---
 
@@ -191,7 +221,8 @@ Designed for production administration.
 
 ## Security Highlights
 
-- Joomla ACL support
+- Joomla ACL permissions
+- Joomla Permissions integration
 - CSRF protection
 - SQL injection protection
 - XSS-safe output handling
@@ -213,8 +244,8 @@ Features include:
 - no N+1 question loading patterns
 - frontend no-store cache protection for active exam sessions
 - large question bank support
-- bulk administrator operations
 - efficient results handling
+- bulk administrator operations
 - Cloudflare-friendly architecture
 - high-traffic safe design
 
@@ -268,8 +299,9 @@ Ideal for:
 
 - certification portals
 - training portals
-- public learning systems
-- radio amateur preparation sites
+- educational websites
+- radio amateur preparation systems
+- internal training platforms
 
 ---
 
@@ -296,6 +328,8 @@ Supported:
 - Joomla native update system
 - Cloudflare deployments
 - modern Joomla MVC architecture
+- Facebook crawler compatibility
+- X / Twitter social sharing previews
 
 Not supported:
 
@@ -308,24 +342,25 @@ Not supported:
 
 ## Current Version
 
-1.0.0
+1.0.1
 
 ---
 
-## First Stable Release Highlights
+## Release Highlights
 
 ### Included
 
 - full modern Joomla 6 architecture
-- exam engine
+- production-ready exam engine
 - learning engine
 - question bank management
 - CSV import/export
 - analytics
 - diagnostics
 - data tools
-- ACL
-- production installer
+- ACL permissions
+- social metadata support
+- clean installer
 - GitHub update support
 
 ---
@@ -339,8 +374,9 @@ Not supported:
 3. Create sections
 4. Import questions
 5. Configure level rules
-6. Create frontend menu items
-7. Publish
+6. Configure social metadata if needed
+7. Create frontend menu items
+8. Publish
 
 ---
 
