@@ -1,21 +1,21 @@
 # DevArt Exams for Joomla
 
-Modern examination and quiz component for Joomla 6, designed for certification systems, training platforms, learning portals, and large question banks.
+Modern examination and quiz component for Joomla 6, designed for certification systems, training platforms, learning portals, educational websites, and large question banks.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.1-orange)
+![Release](https://img.shields.io/badge/Version-1.0.2-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
 
 ## Overview
 
-DevArt Exams is a modern Joomla 6 examination and quiz component built for stable, secure, scalable exam delivery and learning workflows.
+DevArt Exams is a modern Joomla 6 examination and quiz component built for secure, scalable and production-ready exam delivery.
 
-It is designed for certification exams, educational platforms, radio amateur preparation systems, employee training, online testing environments, and large-scale question banks.
+It is designed for certification systems, radio amateur preparation platforms, employee training programs, educational websites, online testing environments and large question banks.
 
-The component focuses on clean Joomla 6 architecture, production reliability, frontend usability, security, social sharing compatibility, and performance under real-world workloads.
+The component focuses on clean Joomla 6 architecture, frontend usability, production reliability, Cloudflare compatibility, secure exam handling and efficient administration workflows.
 
 ---
 
@@ -27,7 +27,7 @@ The component focuses on clean Joomla 6 architecture, production reliability, fr
 - Learning / practice mode
 - configurable pass percentage
 - configurable question limits per level
-- configurable attempts limits
+- configurable attempt limits
 - optional guest access
 - timer support
 - automatic pass / fail evaluation
@@ -56,9 +56,10 @@ Learning mode supports multiple workflows:
 Ideal for:
 
 - certification preparation
-- study systems
 - educational portals
+- training systems
 - exam rehearsal workflows
+- self-study platforms
 
 ---
 
@@ -70,20 +71,43 @@ Structured hierarchy:
 - Levels
 - Sections
 - Questions
-- Embedded Answers
+- Answers
 
 Features:
 
 - multiple choice question workflows
-- 4-answer support
+- unlimited answer options per question
 - image support for questions
 - image support for answers
-- explanations
-- optional difficulty field
+- explanations support
 - publishing controls
 - administrator filtering
 - sorting
 - bulk operations
+- large question bank support
+
+---
+
+## Dynamic Answer Options
+
+Questions are no longer limited to four answers.
+
+Features:
+
+- unlimited answer options
+- add answer button
+- remove answer button
+- flexible certification workflows
+- advanced exam support
+- large educational question bank compatibility
+
+Ideal for:
+
+- certification systems
+- government exams
+- technical examinations
+- educational institutions
+- radio amateur examinations
 
 ---
 
@@ -92,11 +116,11 @@ Features:
 Administrator bulk tools include:
 
 - bulk section reassignment
-- bulk difficulty updates
 - bulk publish / unpublish
 - bulk delete workflows
+- batch maintenance operations
 
-Designed for large question banks.
+Designed for large question banks and production administration.
 
 ---
 
@@ -104,7 +128,7 @@ Designed for large question banks.
 
 ### CSV Import
 
-Production-ready question bank import:
+Production-ready CSV import system:
 
 - CSV preview before import
 - validation before import
@@ -115,8 +139,30 @@ Production-ready question bank import:
 - package auto creation
 - level auto creation
 - section auto creation
-- answer import validation
+- answer validation
 - duplicate handling policies
+
+---
+
+### JSON Import
+
+Full DevArt Exams migration support:
+
+- import exported DevArt Exams backups
+- package import
+- level import
+- section import
+- question import
+- answer import
+- validation before processing
+- production migration workflows
+
+Ideal for:
+
+- moving exam systems between websites
+- staging to production migrations
+- backup restoration
+- question bank distribution
 
 ---
 
@@ -125,6 +171,7 @@ Production-ready question bank import:
 - CSV export
 - JSON export
 - backup workflows
+- migration workflows
 
 ---
 
@@ -137,7 +184,8 @@ Production-ready question bank import:
 - optional guest result storage
 - pass / fail badges
 - score tracking
-- package / level tracking
+- package tracking
+- level tracking
 - timestamp tracking
 
 ---
@@ -157,11 +205,11 @@ Production-ready question bank import:
 ## Frontend Features
 
 - Joomla menu item integration
-- fixed package frontend delivery
-- fixed level frontend delivery
+- fixed package delivery
+- fixed level delivery
 - real exam mode
 - learning mode
-- compact question navigator
+- compact navigator
 - progress display
 - jump to question
 - flagged review workflow
@@ -177,31 +225,31 @@ DevArt Exams includes social sharing support for public exam pages.
 Supported:
 
 - Facebook Open Graph
-- X / Twitter cards
+- X / Twitter Cards
 
 Metadata priority:
 
-1. Joomla Menu Item social metadata
-2. Package social metadata
-3. Global component social metadata
+1. Joomla Menu Item metadata
+2. Package metadata
+3. Global component metadata
 4. Site fallback metadata
 
-Designed to avoid conflicts with existing SEO extensions while preserving social sharing compatibility.
+Designed to coexist with SEO and social sharing extensions.
 
 ---
 
 ## Administrator Features
 
 - operational dashboard
-- quick navigation cards
 - package management
 - level management
 - section management
 - question management
 - results management
-- options panel
-- diagnostics
+- diagnostics tools
 - data tools
+- ACL permissions integration
+- component options panel
 
 ---
 
@@ -210,12 +258,12 @@ Designed to avoid conflicts with existing SEO extensions while preserving social
 Built-in maintenance tools:
 
 - orphan data checks
-- duplicate question finder
+- duplicate question detection
 - integrity diagnostics
 - cleanup tools
 - stale data review
 
-Designed for production administration.
+Designed for production administration and long-term maintenance.
 
 ---
 
@@ -241,19 +289,42 @@ Built for production environments.
 Features include:
 
 - optimized database query workflows
-- no N+1 question loading patterns
-- frontend no-store cache protection for active exam sessions
+- efficient question loading
 - large question bank support
 - efficient results handling
 - bulk administrator operations
 - Cloudflare-friendly architecture
 - high-traffic safe design
 
+Production exam pages use protected runtime handling to prevent cached submissions and stale session data during active exams.
+
 Validated with:
 
 - 1000+ imported questions
 - 4000+ answers
-- large CSV import workflows
+- large CSV imports
+- large JSON migrations
+
+---
+
+## Cloudflare Compatibility
+
+DevArt Exams is designed for Cloudflare-powered Joomla websites.
+
+Recommended configuration:
+
+- cache normal content pages
+- cache categories
+- cache articles
+- cache static assets
+
+Do not cache:
+
+- active exam runner pages
+- exam submission pages
+- active exam result processing pages
+
+This prevents invalid session tokens and stale exam submissions.
 
 ---
 
@@ -267,17 +338,21 @@ Validated with:
 ## Installation
 
 1. Download the latest release from GitHub
+
 2. Go to:
 
 `System → Extensions → Install`
 
 3. Upload the component ZIP package
+
 4. Open:
 
 `Components → DevArt Exams`
 
 5. Configure component options
+
 6. Create packages, levels, sections and questions
+
 7. Create frontend menu items
 
 ---
@@ -288,26 +363,26 @@ DevArt Exams supports Joomla frontend menu items.
 
 Examples:
 
-- fixed exam package
-- fixed exam level
-- real exam delivery
-- learning mode delivery
-- learning all questions mode
+- fixed package
+- fixed level
+- real exam mode
+- learning mode
+- all questions learning mode
 - user choice learning mode
 
 Ideal for:
 
 - certification portals
-- training portals
 - educational websites
 - radio amateur preparation systems
-- internal training platforms
+- training organizations
+- employee training platforms
 
 ---
 
 ## Joomla Native Updates
 
-DevArt Exams supports Joomla native updates via GitHub.
+DevArt Exams supports Joomla native updates through GitHub.
 
 After installation:
 
@@ -325,13 +400,13 @@ Supported:
 
 - Joomla 6.x
 - PHP 8.2+
-- Joomla native update system
+- Joomla native updates
 - Cloudflare deployments
 - modern Joomla MVC architecture
 - Facebook crawler compatibility
-- X / Twitter social sharing previews
+- X social sharing previews
 
-Not supported:
+Not Supported:
 
 - Joomla 3
 - Joomla 4
@@ -342,7 +417,7 @@ Not supported:
 
 ## Current Version
 
-1.0.1
+1.0.2
 
 ---
 
@@ -350,17 +425,17 @@ Not supported:
 
 ### Included
 
-- full modern Joomla 6 architecture
-- production-ready exam engine
+- real exam engine
 - learning engine
-- question bank management
+- unlimited answer options
 - CSV import/export
-- analytics
+- JSON import/export
+- results analytics
 - diagnostics
 - data tools
 - ACL permissions
 - social metadata support
-- clean installer
+- Cloudflare compatibility improvements
 - GitHub update support
 
 ---
@@ -374,7 +449,7 @@ Not supported:
 3. Create sections
 4. Import questions
 5. Configure level rules
-6. Configure social metadata if needed
+6. Configure social metadata if required
 7. Create frontend menu items
 8. Publish
 
@@ -384,10 +459,12 @@ Not supported:
 
 Recommended:
 
-- use CSV import
-- organize by sections
+- use CSV import for bulk content
+- use JSON export for backups
+- organize questions by sections
 - use level-specific limits
-- enable diagnostics review periodically
+- run diagnostics periodically
+- test imports on staging environments
 
 ---
 
@@ -407,11 +484,11 @@ https://github.com/devartgr/joomla-devart-exams
 
 This software is provided "as is", without warranty of any kind.
 
-DevArt shall not be held liable for any damages, data loss, downtime, security issues, or other problems resulting from the use or misuse of this software.
+DevArt shall not be held liable for any damages, data loss, downtime, security issues, business interruption, or other problems resulting from the use or misuse of this software.
 
 Users are responsible for testing the software in their own environment and maintaining proper backups before installation or upgrades.
 
-Always test on a staging environment before using in production.
+Always test on a staging environment before deploying updates to production systems.
 
 ---
 
