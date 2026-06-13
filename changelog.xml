@@ -3,6 +3,53 @@
     <changelog>
         <element>com_devartexams</element>
         <type>component</type>
+        <version>1.0.2</version>
+
+        <addition>
+            <item>Added full JSON import support for moving complete exam data between DevArt Exams installations</item>
+            <item>Added JSON import support for packages, levels, sections, questions and answers</item>
+            <item>Added dynamic answer options for questions</item>
+            <item>Added support for more than four possible answers per question</item>
+            <item>Added add and remove answer controls in the question form</item>
+            <item>Added stronger production cache protection for active exam pages</item>
+            <item>Added no-store cache headers for exam runner, result and submission workflows</item>
+        </addition>
+
+        <change>
+            <item>Improved question authoring flexibility for larger exams and certification-style question banks</item>
+            <item>Improved JSON import validation before writing imported exam data</item>
+            <item>Improved package, level and section relationship validation in administrator forms</item>
+            <item>Improved production reliability on Joomla sites using Cloudflare full page cache</item>
+            <item>Improved active exam runtime behavior by preventing cached HTML from being reused during session-based exam attempts</item>
+            <item>Improved backend question form consistency when working with package-specific levels and sections</item>
+        </change>
+
+        <security>
+            <item>Improved protection against stale cached exam forms and invalid Joomla session tokens during real exam submission</item>
+            <item>Improved cache-safety for active exam runner and submit pages without disabling cache for unrelated site pages</item>
+            <item>Improved server-side validation of package, level and section relationships before saving questions</item>
+            <item>Improved import safety by validating JSON structure before processing exam data</item>
+        </security>
+
+        <fix>
+            <item>Fixed question form level filtering so only levels belonging to the selected package are shown</item>
+            <item>Fixed question form section filtering so only sections belonging to the selected package and level are shown</item>
+            <item>Fixed package-level mismatch cases when saving questions from administrator forms</item>
+            <item>Fixed real exam submission reliability on aggressive Cloudflare full cache deployments</item>
+            <item>Fixed stale cached exam page behavior that could cause invalid token errors during final submission</item>
+        </fix>
+
+        <note>
+            <item>Recommended update for all DevArt Exams installations using real exam mode</item>
+            <item>Recommended update for production sites using Cloudflare, Joomla cache or other full page cache layers</item>
+            <item>JSON import should be tested on a staging environment before importing large production exam banks</item>
+            <item>Active exam runner and submit pages must remain excluded from full page cache for correct session-based operation</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>com_devartexams</element>
+        <type>component</type>
         <version>1.0.1</version>
 
         <addition>
