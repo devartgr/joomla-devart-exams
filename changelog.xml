@@ -1,170 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelogs>
     <changelog>
-        <element>com_devartexams</element>
-        <type>component</type>
+        <element>pkg_devartexams</element>
+        <type>package</type>
+        <version>1.0.6</version>
+        <addition>
+            <item>Added bundled translations for fr-FR, de-DE, es-ES, it-IT, pt-BR, cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR and zh-CN (15 locales total with en-GB and el-GR).</item>
+            <item>Completed missing Greek administrator language keys while preserving curated el-GR strings.</item>
+            <item>Rebuilt the administrator dashboard with hub-style action cards for Packages, Levels, Sections, Questions, Results and Data Tools.</item>
+        </addition>
+        <fix>
+            <item>Removed answer-key leakage from exam mode HTML and answer payloads.</item>
+            <item>Exam submit now whitelists question IDs from the server-issued attempt token.</item>
+            <item>Exam timeout is enforced server-side from the attempt token instead of client POST fields.</item>
+            <item>Reserved pending exam attempts in session to prevent concurrent-tab max-attempt bypass.</item>
+            <item>Sanitized CSV exports against spreadsheet formula injection.</item>
+            <item>Added package, level and section cross-validation to question save.</item>
+            <item>Added ACL checks to question save and import/export controller actions.</item>
+            <item>Fixed Packages dashboard hub icon to a valid Joomla icon.</item>
+        </fix>
+        <change>
+            <item>Moved Import / Export and Options to dedicated dashboard buttons and removed the empty Options submenu entry.</item>
+            <item>Wired custom ACL actions for packages, levels, sections, questions, results and import workflows.</item>
+            <item>Joomla native updates now target the package only (pkg_devartexams).</item>
+            <item>PHP minimum aligned to 8.3.0 across package and component metadata.</item>
+        </change>
+        <security>
+            <item>Hardened exam integrity, attempt limits, CSV export safety and administrator ACL enforcement for production use.</item>
+        </security>
+        <note>
+            <item>Public release after 1.0.2. Intermediate local builds are included here.</item>
+            <item>Active exam, submit and result pages must remain excluded from Cloudflare full page cache.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Recommended update for all DevArt Exams installations.</item>
+        </note>
+    </changelog>
+    <changelog>
+        <element>pkg_devartexams</element>
+        <type>package</type>
         <version>1.0.2</version>
-
         <addition>
-            <item>Added full JSON import support for moving complete exam data between DevArt Exams installations</item>
-            <item>Added JSON import support for packages, levels, sections, questions and answers</item>
-            <item>Added dynamic answer options for questions</item>
-            <item>Added support for more than four possible answers per question</item>
-            <item>Added add and remove answer controls in the question form</item>
-            <item>Added stronger production cache protection for active exam pages</item>
-            <item>Added no-store cache headers for exam runner, result and submission workflows</item>
+            <item>Added full JSON import for DevArt Exams exports from another Joomla site.</item>
+            <item>Added support for more than four answer options per question in the administrator question form and JSON import.</item>
+            <item>Added dynamic add/remove answer controls in question editing.</item>
         </addition>
-
-        <change>
-            <item>Improved question authoring flexibility for larger exams and certification-style question banks</item>
-            <item>Improved JSON import validation before writing imported exam data</item>
-            <item>Improved package, level and section relationship validation in administrator forms</item>
-            <item>Improved production reliability on Joomla sites using Cloudflare full page cache</item>
-            <item>Improved active exam runtime behavior by preventing cached HTML from being reused during session-based exam attempts</item>
-            <item>Improved backend question form consistency when working with package-specific levels and sections</item>
-        </change>
-
-        <security>
-            <item>Improved protection against stale cached exam forms and invalid Joomla session tokens during real exam submission</item>
-            <item>Improved cache-safety for active exam runner and submit pages without disabling cache for unrelated site pages</item>
-            <item>Improved server-side validation of package, level and section relationships before saving questions</item>
-            <item>Improved import safety by validating JSON structure before processing exam data</item>
-        </security>
-
         <fix>
-            <item>Fixed question form level filtering so only levels belonging to the selected package are shown</item>
-            <item>Fixed question form section filtering so only sections belonging to the selected package and level are shown</item>
-            <item>Fixed package-level mismatch cases when saving questions from administrator forms</item>
-            <item>Fixed real exam submission reliability on aggressive Cloudflare full cache deployments</item>
-            <item>Fixed stale cached exam page behavior that could cause invalid token errors during final submission</item>
+            <item>Fixed question form package filtering so levels and sections from other packages are hidden after package selection.</item>
+            <item>Added server-side validation to prevent saving a question with a level or section from a different package.</item>
         </fix>
-
+        <change>
+            <item>Improved production safety for Cloudflare/full-cache environments by keeping active exam and result pages no-store.</item>
+            <item>Improved import/export workflow for site-to-site question bank migrations.</item>
+        </change>
         <note>
-            <item>Recommended update for all DevArt Exams installations using real exam mode</item>
-            <item>Recommended update for production sites using Cloudflare, Joomla cache or other full page cache layers</item>
-            <item>JSON import should be tested on a staging environment before importing large production exam banks</item>
-            <item>Active exam runner and submit pages must remain excluded from full page cache for correct session-based operation</item>
+            <item>Active exam runner, submit and result pages must remain excluded from full page cache.</item>
+            <item>Recommended update for production DevArt Exams installations.</item>
         </note>
     </changelog>
-
     <changelog>
-        <element>com_devartexams</element>
-        <type>component</type>
-        <version>1.0.1</version>
-
-        <addition>
-            <item>Added Joomla ACL permissions integration including administrator configuration permissions</item>
-            <item>Added Facebook and X social sharing Open Graph metadata support</item>
-            <item>Added menu item social metadata support</item>
-            <item>Added package-level social metadata support</item>
-            <item>Added global fallback social metadata support</item>
-            <item>Added social metadata priority resolution: Menu Item → Package → Global → Site fallback</item>
-            <item>Added cleaner production release hardening for public deployment</item>
-        </addition>
-
-        <change>
-            <item>Improved production stability for first public release deployments</item>
-            <item>Improved Joomla administrator permissions integration</item>
-            <item>Improved frontend social sharing compatibility for public exam pages</item>
-            <item>Improved metadata handling for Facebook crawler and X sharing previews</item>
-            <item>Improved release packaging consistency for GitHub production deployment</item>
-        </change>
-
-        <security>
-            <item>Added proper ACL enforcement for component options and administrator permissions</item>
-            <item>Improved production safety for administrator configuration access</item>
-        </security>
-
-        <fix>
-            <item>Fixed missing Joomla Permissions tab in component configuration</item>
-            <item>Fixed frontend social metadata fallback handling</item>
-            <item>Fixed public exam page Open Graph compatibility</item>
-            <item>Fixed metadata handling when multiple exam packages are used</item>
-            <item>Fixed production release packaging inconsistencies</item>
-        </fix>
-
-        <note>
-            <item>Production stability release for DevArt Exams</item>
-            <item>Recommended update for all initial 1.0.0 installations</item>
-            <item>Designed for Joomla 6 production exam and learning deployments</item>
-        </note>
-    </changelog>
-
-    <changelog>
-        <element>com_devartexams</element>
-        <type>component</type>
+        <element>pkg_devartexams</element>
+        <type>package</type>
         <version>1.0.0</version>
-
         <addition>
-            <item>Added full Joomla 6 native DevArt Exams component with modern MVC architecture</item>
-            <item>Added packages, levels, sections, questions and embedded answers management</item>
-            <item>Added real exam mode with official result storage</item>
-            <item>Added learning and practice mode with instant feedback</item>
-            <item>Added menu item integration for fixed package, fixed level and frontend mode behavior</item>
-            <item>Added learning question set options for random exam-sized practice or all available level questions</item>
-            <item>Added configurable pass percentage, question limits, timer, attempts and guest policy</item>
-            <item>Added random or fixed question order support</item>
-            <item>Added random or fixed answer order support</item>
-            <item>Added one-question-per-page and all-questions-on-one-page frontend modes</item>
-            <item>Added compact frontend question navigator, progress display and flagged questions for review</item>
-            <item>Added image support for questions and answers</item>
-            <item>Added explanations for learning and review workflows</item>
-            <item>Added detailed results history for real exams</item>
-            <item>Added answer review with correct and wrong answer display</item>
-            <item>Added section statistics and weak area analysis</item>
-            <item>Added CSV question bank import with preview and validation</item>
-            <item>Added CSV import support for Greek UTF-8 content</item>
-            <item>Added duplicate detection during CSV import</item>
-            <item>Added CSV export support</item>
-            <item>Added JSON backup export support</item>
-            <item>Added administrator results screen</item>
-            <item>Added administrator data tools and diagnostics</item>
-            <item>Added orphan data checks and cleanup tools</item>
-            <item>Added bulk question tools for large datasets</item>
-            <item>Added Joomla ACL support foundation</item>
-            <item>Added component options including guest result storage policy</item>
-            <item>Added GitHub-based Joomla update server support</item>
+            <item>Initial stable public release of DevArt Exams for Joomla 6.</item>
+            <item>Added exam mode, learning mode, CSV import/export, results, analytics, data tools, image support and Joomla ACL foundation.</item>
         </addition>
-
         <change>
-            <item>Component architecture designed specifically for Joomla 6 and PHP 8.2+</item>
-            <item>Modern Joomla service provider and MVCComponent architecture used throughout</item>
-            <item>Frontend exam flow optimized for Cloudflare and cache-safe deployments</item>
-            <item>Exam runtime pages use no-store cache headers to protect session-based attempts</item>
-            <item>Question and answer loading optimized to avoid N+1 query patterns</item>
-            <item>Results and review workflows optimized for large question banks</item>
-            <item>Administrator interface simplified with operational dashboard cards</item>
-            <item>Answers are managed inside the Question form as the single source of truth</item>
-            <item>Sections are optional and can be used for organization, filtering and statistics</item>
-            <item>Language strings prepared for Greek and English usage</item>
-            <item>Installer prepared for clean production installation without demo data</item>
+            <item>Component architecture designed specifically for Joomla 6 and PHP 8.3+.</item>
+            <item>Production installer prepared for clean installation without demo data.</item>
         </change>
-
         <security>
-            <item>Added SQL injection protection using Joomla database APIs and safe query construction</item>
-            <item>Added XSS protection through output escaping and input filtering</item>
-            <item>Added CSRF protection for administrator and frontend actions</item>
-            <item>Added attempt token validation to reduce duplicate or stale exam submissions</item>
-            <item>Added submit rate guard for high-traffic environments</item>
-            <item>Added guest result storage control through component options</item>
-            <item>Added safer uninstall behavior with Keep Data support</item>
+            <item>Added CSRF protection, ACL enforcement, safe query construction, no-store exam headers and attempt integrity protections.</item>
         </security>
-
-        <fix>
-            <item>Fixed frontend mode persistence between learning and real exam workflows</item>
-            <item>Fixed all-questions-on-one-page frontend behavior</item>
-            <item>Fixed compact navigator behavior for large exams</item>
-            <item>Fixed display count for learning mode when all level questions are used</item>
-            <item>Fixed duplicate official result prevention on repeated submissions</item>
-            <item>Fixed installer upgrade safety for repeated schema updates</item>
-            <item>Fixed uninstall cleanup so clean installs do not include unwanted demo data</item>
-        </fix>
-
         <note>
-            <item>Initial stable public release of DevArt Exams for Joomla 6</item>
-            <item>Designed for exam systems, certification practice, learning portals and large question banks</item>
-            <item>Tested with imports of more than 1000 questions and 4000 answers</item>
-            <item>Always test on a staging environment before production deployment</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
         </note>
     </changelog>
 </changelogs>
