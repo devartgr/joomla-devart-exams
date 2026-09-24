@@ -4,7 +4,7 @@ Modern examination and quiz package for Joomla 6, designed for certification sys
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.6-orange)
+![Release](https://img.shields.io/badge/Version-1.0.7-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -82,7 +82,7 @@ Features:
 
 ## Installation
 
-Install `pkg_devartexams_v1.0.6.zip` through Joomla Extensions → Install.
+Install `pkg_devartexams_v1.0.7.zip` through Joomla Extensions → Install.
 
 The package contains only `com_devartexams`.
 
