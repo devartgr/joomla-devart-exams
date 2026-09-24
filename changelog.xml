@@ -3,6 +3,23 @@
     <changelog>
         <element>pkg_devartexams</element>
         <type>package</type>
+        <version>1.0.7</version>
+        <fix>
+            <item>Replaced deprecated Table::getDbo() with getDatabase() in package, level, section and question cascade deletes.</item>
+            <item>Replaced LegacyErrorHandlingTrait::setError() validation paths with InvalidArgumentException throws in admin Tables and Models.</item>
+        </fix>
+        <change>
+            <item>Aligned AnswerTable and related Table constructors to DatabaseInterface for Joomla 7 forward-compatibility.</item>
+        </change>
+        <note>
+            <item>Forward-compatibility hardening for announced Joomla 7.0 API removals.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Recommended update for all DevArt Exams installations.</item>
+        </note>
+    </changelog>
+    <changelog>
+        <element>pkg_devartexams</element>
+        <type>package</type>
         <version>1.0.6</version>
         <addition>
             <item>Added bundled translations for fr-FR, de-DE, es-ES, it-IT, pt-BR, cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR and zh-CN (15 locales total with en-GB and el-GR).</item>
