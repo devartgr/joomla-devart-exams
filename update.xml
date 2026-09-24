@@ -6,12 +6,12 @@
         <element>pkg_devartexams</element>
         <type>package</type>
         <client>site</client>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
         <infourl title="DevArt Exams">https://github.com/devartgr/joomla-devart-exams</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-exams/releases/download/v1.0.6/pkg_devartexams_v1.0.6.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-exams/releases/download/v1.0.7/pkg_devartexams_v1.0.7.zip</downloadurl>
         </downloads>
-        <sha256>d05d18f944353c325058f0cf82733e67b718c730f57e9996eb944184f5eafd02</sha256>
+        <sha256>05e9d439c7ed0fa27d5c738b500145b8369db396388481a0e72f3fae02c3cc15</sha256>
         <tags>
             <tag>stable</tag>
         </tags>
